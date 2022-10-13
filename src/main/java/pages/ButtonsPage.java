@@ -22,7 +22,7 @@ public class ButtonsPage {
     }
 
     public WebElement clickMeBtn(){
-        return webDriver.findElement(By.id("fSkUX"));
+        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/button[1]"));
     }
 
     public void clickDoubleClick(){
