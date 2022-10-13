@@ -53,6 +53,20 @@ public class WebTablesPage {
     public WebElement submitBtn(){
         return webDriver.findElement(By.id("submit"));
     }
+    public WebElement deleteBtn(int rowNum){
+        return  webDriver.findElement(By.id("delete-record-" + rowNum));
+    }
+    public void clickDeleteBtn(int rowNum){
+        deleteBtn(rowNum).click();
+    }
+
+    public WebElement editBtn(int rowNum){
+        return  webDriver.findElement(By.id("edit-record-" + rowNum));
+
+    }
+    public void clickEditBtn(int rowNum){
+        editBtn(rowNum).click();
+    }
 
     public void fillFirstName(String s){
         firstName().sendKeys(s);
@@ -70,11 +84,11 @@ public class WebTablesPage {
         age().sendKeys(s);
     }
 
-    public void gillSalary(String s){
+    public void fillSalary(String s){
         salary().sendKeys(s);
     }
 
-    public void gillDepartment(String s){
+    public void fillDepartment(String s){
         department().sendKeys(s);
     }
 
