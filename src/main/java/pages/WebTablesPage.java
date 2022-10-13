@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -70,6 +71,22 @@ public class WebTablesPage {
 
     public void fillFirstName(String s){
         firstName().sendKeys(s);
+    }
+
+    public void clearBox(){
+        firstName().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        firstName().sendKeys(Keys.DELETE);
+        lastName().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        lastName().sendKeys(Keys.DELETE);
+        email().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        email().sendKeys(Keys.DELETE);
+        age().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        age().sendKeys(Keys.DELETE);
+        salary().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        salary().sendKeys(Keys.DELETE);
+        department().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        department().sendKeys(Keys.DELETE);
+
     }
 
     public void fillLastName(String s){

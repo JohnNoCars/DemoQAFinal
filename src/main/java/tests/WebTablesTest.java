@@ -183,4 +183,27 @@ public class WebTablesTest extends BasePage {
         webTablesPage.searchTable(firstName);
         Assert.assertEquals(excelReader.getStringData("WebTables",1,6), webTablesPage.getRowDetails(0));
     }
+
+    @Test(dataProvider = "validEntry")
+    public void userCanEditEntry(String firstName, String lastName, String email, String age, String salary, String department){
+        webTablesPage.clickEditBtn(1);
+        visibilityWait(webTablesPage.firstName());
+        webTablesPage.clearBox();
+        webTablesPage.fillFirstName(firstName);
+        webTablesPage.fillLastName(lastName);
+        webTablesPage.fillEmail(email);
+        webTablesPage.fillAge(age);
+        webTablesPage.fillSalary(salary);
+        webTablesPage.fillDepartment(department);
+        webTablesPage.clickSubmitBtn();
+        Assert.assertEquals(excelReader.getStringData("WebTables",1,6), webTablesPage.getRowDetails(0));
+    }
+
+    @Test
+    public void userCanDeleteEntry(){
+        String firstRow = webTablesPage.getRowDetails(0);
+        webTablesPage.clickDeleteBtn(1);
+        String firstRow1 = webTablesPage.getRowDetails(0);
+        Assert.assertNotEquals(firstRow,firstRow1);
+    }
 }
