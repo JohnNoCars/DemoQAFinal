@@ -27,7 +27,7 @@ public class RadioButtonPage {
         return webDriver.findElement(By.className("text-success"));
     }
 
-    public String radioBtnSelected(){
+    public String radioBtnSelectedText(){
         return getSuccessMessage().getText();
     }
 }
