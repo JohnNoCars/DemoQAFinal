@@ -15,56 +15,63 @@ public class LinksPage {
         this.webDriver = webDriver;
     }
 
-    public List<WebElement> listOfLinks(){
-        return webDriver.findElements(By.tagName("a"));
-    }
     public void scrollIntoView(WebElement webElement) {
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", webElement);
     }
-
+    public WebElement homeLink(){
+        return webDriver.findElement(By.id("simpleLink"));
+    }
+    public WebElement homeDynamicLink(){
+        return webDriver.findElement(By.id("dynamicLink"));
+    }
+    public WebElement createdLink(){
+        return webDriver.findElement(By.id("created"));
+    }
+    public WebElement noContentLink(){
+        return webDriver.findElement(By.id("no-content"));
+    }
+    public WebElement movedLink(){
+        return webDriver.findElement(By.id("moved"));
+    }
+    public WebElement badRequestLink(){
+        return webDriver.findElement(By.id("bad-request"));
+    }
+    public WebElement unauthorizedLink(){
+        return webDriver.findElement(By.id("unauthorized"));
+    }
+    public WebElement forbiddenLink(){
+        return webDriver.findElement(By.id("forbidden"));
+    }
+    public WebElement notFoundLink(){
+        return webDriver.findElement(By.id("invalid-url"));
+    }
     public void clickHomeLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
-
+        homeLink().click();
     }
-
-    public void clickHomeccLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
+    public void clickDynamicLink(){
+        homeDynamicLink().click();
     }
-
     public void clickCreatedLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
+        createdLink().click();
     }
-
     public void clickNoContentLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
+        noContentLink().click();
     }
-
     public void clickMovedLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
+        movedLink().click();
     }
-
     public void clickBadRequestLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
+        badRequestLink().click();
     }
     public void clickUnauthorizedLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
+        unauthorizedLink().click();
     }
     public void clickForbiddenLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
+        forbiddenLink().click();
     }
     public void clickNotFoundLink(){
-        scrollIntoView(listOfLinks().get(0));
-        listOfLinks().get(0).click();
+        notFoundLink().click();
     }
-
     public String getLinkResponse(){
         return webDriver.findElement(By.id("linkResponse")).getText();
     }
