@@ -14,6 +14,8 @@ import org.testng.annotations.BeforeMethod;
 import pages.*;
 //import pages.elements.*;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -71,6 +73,42 @@ public class BasePage {
 
     public void inputText(WebElement webElement, String string) {
         webElement.sendKeys(string);
+    }
+    public void switchTab() throws AWTException {
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_TAB);
+        robot.keyRelease(KeyEvent.VK_TAB);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+    }
+    public void closeTab() throws AWTException {
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_W);
+        robot.keyRelease(KeyEvent.VK_W);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+    }
+    public void zoomIn(int zoomInTimes) throws AWTException {
+        Robot robot = new Robot();
+        for (int i = 0; i < zoomInTimes; i++) {
+
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_ADD);
+            robot.keyRelease(KeyEvent.VK_ADD);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+        }
+
+    }
+    public void zoomOut(int zoomOutTimes) throws AWTException {
+        Robot robot = new Robot();
+        for (int i = 0; i < zoomOutTimes; i++) {
+
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_SUBTRACT);
+            robot.keyRelease(KeyEvent.VK_SUBTRACT);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+        }
     }
 
    /* @AfterMethod
