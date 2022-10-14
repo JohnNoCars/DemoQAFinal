@@ -46,5 +46,9 @@ public class HomePage {
         scrollIntoView(listOfAllPages().get(4));
         listOfAllPages().get(4).click();
     }
+    public void clickBookStoreApplication(){
+        scrollIntoView(listOfAllPages().get(5));
+        listOfAllPages().get(5).click();
+    }
 
 }

@@ -88,6 +88,30 @@ public class SidebarPage {
     public WebElement modalDialogsSide(){
         return webDriver.findElement(By.id("item-4"));
     }
+    public WebElement login(){
+        return webDriver.findElement(By.id("item-0"));
+    }
+    public void clickLogin(){
+        login().click();
+    }
+    public WebElement bookStore(){
+        return webDriver.findElement(By.id("item-2"));
+    }
+    public void clickBookStore(){
+        bookStore().click();
+    }
+    public WebElement profile(){
+        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/div[1]/ul[1]/li[3]"));
+    }
+    public void clickProfile(){
+        profile().click();
+    }
+    public WebElement bookStoreAPI(){
+        return webDriver.findElement(By.id("item-4"));
+    }
+    public void clickBookStoreAPI(){
+        bookStoreAPI().click();
+    }
 
 
 }

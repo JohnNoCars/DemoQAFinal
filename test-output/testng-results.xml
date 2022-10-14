@@ -6,7 +6,7 @@
     <groups>
     </groups>
     <test started-at="2022-10-13T21:48:29 CEST" name="DemoQAFinal" finished-at="2022-10-13T21:48:44 CEST" duration-ms="14420">
-      <class name="tests.WebTablesTest">
+      <class name="tests.elementsTest.WebTablesTest">
         <test-method is-config="true" signature="setUpConfig()[pri:0, instance:tests.WebTablesTest@75f9eccc]" started-at="2022-10-13T21:48:30 CEST" name="setUpConfig" finished-at="2022-10-13T21:48:35 CEST" duration-ms="5398" status="PASS">
           <reporter-output>
           </reporter-output>
@@ -51,7 +51,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userCanSearch -->
-      </class> <!-- tests.WebTablesTest -->
+      </class> <!-- tests.elementsTest.WebTablesTest -->
     </test> <!-- DemoQAFinal -->
   </suite> <!-- Default Suite -->
 </testng-results>

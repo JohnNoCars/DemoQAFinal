@@ -1,7 +1,6 @@
 package base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.BeforeClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,16 +8,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.annotations.BeforeClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
+import pages.bookStoreApplication.ProfilePage;
+import pages.elements.*;
 //import pages.elements.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class BasePage {
 
@@ -37,6 +35,7 @@ public class BasePage {
     public BrokenLinksPage brokenLinksPage;
     public UploadNDownloadPage uploadNDownloadPage;
     public DynamicPropertiesPage dynamicPropertiesPage;
+    public ProfilePage profilePage;
 
     @BeforeMethod
     public void setUpConfig() throws IOException {
@@ -56,6 +55,7 @@ public class BasePage {
         uploadNDownloadPage = new UploadNDownloadPage(webDriver);
         dynamicPropertiesPage = new DynamicPropertiesPage(webDriver);
         sidebarPage = new SidebarPage(webDriver);
+        profilePage = new ProfilePage(webDriver);
 
     }
 
