@@ -89,7 +89,7 @@ public class SidebarPage {
         return webDriver.findElement(By.id("item-4"));
     }
     public WebElement login(){
-        return webDriver.findElement(By.id("item-0"));
+        return webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[6]/div/ul/li[1]"));
     }
     public void clickLogin(){
         login().click();

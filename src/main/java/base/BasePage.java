@@ -1,6 +1,7 @@
 package base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
+import pages.bookStoreApplication.LoginPage;
 import pages.bookStoreApplication.ProfilePage;
+import pages.bookStoreApplication.RegistrationPage;
 import pages.elements.*;
 //import pages.elements.*;
 
@@ -36,6 +39,8 @@ public class BasePage {
     public UploadNDownloadPage uploadNDownloadPage;
     public DynamicPropertiesPage dynamicPropertiesPage;
     public ProfilePage profilePage;
+    public RegistrationPage registrationPage;
+    public LoginPage loginPage;
 
     @BeforeMethod
     public void setUpConfig() throws IOException {
@@ -56,6 +61,8 @@ public class BasePage {
         dynamicPropertiesPage = new DynamicPropertiesPage(webDriver);
         sidebarPage = new SidebarPage(webDriver);
         profilePage = new ProfilePage(webDriver);
+        registrationPage = new RegistrationPage(webDriver);
+        loginPage = new LoginPage(webDriver);
 
     }
 
@@ -69,6 +76,9 @@ public class BasePage {
 
     public void click(WebElement webElement){
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", webElement);
+    }
+    public void removeElement(WebElement webElement){
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].style.visibility = 'hidden'", webElement);
     }
 
     public void inputText(WebElement webElement, String string) {
@@ -109,6 +119,9 @@ public class BasePage {
             robot.keyRelease(KeyEvent.VK_SUBTRACT);
             robot.keyRelease(KeyEvent.VK_CONTROL);
         }
+    }
+    public WebElement ad(){
+        return webDriver.findElement(By.xpath("//*[@id=\"fixedban\"]"));
     }
 
    /* @AfterMethod
