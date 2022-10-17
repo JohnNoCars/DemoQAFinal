@@ -188,12 +188,18 @@ public class WebTablesTest extends BasePage {
     public void userCanEditEntry(String firstName, String lastName, String email, String age, String salary, String department){
         webTablesPage.clickEditBtn(1);
         visibilityWait(webTablesPage.firstName());
-        webTablesPage.clearBox();
+        //webTablesPage.clearBox();
+        webTablesPage.firstName().clear();
         webTablesPage.fillFirstName(firstName);
+        webTablesPage.lastName().clear();
         webTablesPage.fillLastName(lastName);
+        webTablesPage.email().clear();
         webTablesPage.fillEmail(email);
+        webTablesPage.age().clear();
         webTablesPage.fillAge(age);
+        webTablesPage.salary().clear();
         webTablesPage.fillSalary(salary);
+        webTablesPage.department().clear();
         webTablesPage.fillDepartment(department);
         webTablesPage.clickSubmitBtn();
         Assert.assertEquals(excelReader.getStringData("WebTables",1,6), webTablesPage.getRowDetails(0));

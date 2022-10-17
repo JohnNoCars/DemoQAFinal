@@ -15,10 +15,10 @@ public class ProfilePage {
         this.webDriver = webDriver;
     }
     public WebElement login(){
-        return webDriver.findElement(By.xpath("//*[@id=\"notLoggin-label\"]/a[1]"));
+        return webDriver.findElement(By.linkText("login"));
     }
     public WebElement register(){
-        return webDriver.findElement(By.xpath("//*[@id=\"notLoggin-label\"]/a[2]"));
+        return webDriver.findElement(By.linkText("register"));
     }
     public void clickLogin(){
         login().click();

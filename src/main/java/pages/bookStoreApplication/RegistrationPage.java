@@ -15,22 +15,22 @@ public class RegistrationPage {
         this.webDriver = webDriver;
     }
     public WebElement firstName(){
-        return webDriver.findElement(By.xpath("//*[@id=\"firstname\"]"));
+        return webDriver.findElement(By.id("firstname"));
     }
     public WebElement lastName(){
-        return webDriver.findElement(By.xpath("//*[@id=\"lastname\"]"));
+        return webDriver.findElement(By.id("lastname"));
     }
     public WebElement userName(){
-        return webDriver.findElement(By.xpath("//*[@id=\"userName\"]"));
+        return webDriver.findElement(By.id("userName"));
     }
     public WebElement password(){
-        return webDriver.findElement(By.xpath("//*[@id=\"password\"]"));
+        return webDriver.findElement(By.id("password"));
     }
     public  WebElement registerBtn(){
-        return webDriver.findElement(By.xpath("//*[@id=\"register\"]"));
+        return webDriver.findElement(By.id("register"));
     }
     public WebElement backToLoginBtn(){
-        return webDriver.findElement(By.xpath("//*[@id=\"gotologin\"]"));
+        return webDriver.findElement(By.id("gotologin"));
 
     }
     public void fillFirstName(String s){
@@ -51,15 +51,15 @@ public class RegistrationPage {
     public void clickBackToLoginBtn(){
         backToLoginBtn().click();
     }
-    public void overrideReCaptcha(){
+    /*public void overrideReCaptcha(){
         WebElement iFrame = webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[6]/div/div/div/iframe"));
         webDriver.switchTo().frame(iFrame);
         WebElement iFrame_checkbox =
                 webDriver.findElement(By.xpath("//*[@id=\"recaptcha-anchor\"]/div[1]"));
         iFrame_checkbox.click();
-    }
-    public String getLoginUnsuccessful(){
-        return webDriver.findElement(By.xpath("//*[@id=\"name\"]")).getText();
+    }*/
+    public String getRegistrationUnsuccessful(){
+        return webDriver.findElement(By.id("name")).getText();
     }
 
 

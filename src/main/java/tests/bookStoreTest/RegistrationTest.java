@@ -14,6 +14,7 @@ public class RegistrationTest extends BasePage {
         removeElement(ad());
         scroll(sidebarPage.profile());
         sidebarPage.clickProfile();
+        visibilityWait(profilePage.register());
         profilePage.clickRegister();
 
     }
@@ -24,6 +25,6 @@ public class RegistrationTest extends BasePage {
         registrationPage.fillUserName(excelReader.getStringData("BookStoreRegister",1,2));
         registrationPage.fillPassword(excelReader.getStringData("BookStoreRegister",1,3));
         registrationPage.clickRegisterButton();
-        Assert.assertEquals(excelReader.getStringData("BookStoreRegister",1,4),registrationPage.getLoginUnsuccessful());
+        Assert.assertEquals(excelReader.getStringData("BookStoreRegister",1,4),registrationPage.getRegistrationUnsuccessful());
     }
 }
