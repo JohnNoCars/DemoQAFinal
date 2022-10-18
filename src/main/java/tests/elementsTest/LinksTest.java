@@ -1,7 +1,8 @@
 package tests.elementsTest;
 
 import base.BasePage;
-import org.junit.Assert;
+
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

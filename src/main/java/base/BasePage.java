@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
 import pages.bookStoreApplication.LoginPage;
@@ -42,7 +43,7 @@ public class BasePage {
     public RegistrationPage registrationPage;
     public LoginPage loginPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUpConfig() throws IOException {
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
