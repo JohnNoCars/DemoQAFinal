@@ -6,11 +6,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.Response;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-//import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import pages.*;
 import pages.bookStoreApplication.LoginPage;
 import pages.bookStoreApplication.ProfilePage;
@@ -22,7 +22,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class BasePage {
+public class BaseTest {
 
     public WebDriver webDriver;
     public ExcelReader excelReader;
@@ -69,6 +69,10 @@ public class BasePage {
 
     public void visibilityWait(WebElement webElement){
         webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
+    }
+
+    public void waitForElementClickability(WebElement webElement){
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
     public void scroll(WebElement webElement){
@@ -125,11 +129,11 @@ public class BasePage {
         return webDriver.findElement(By.xpath("//*[@id=\"fixedban\"]"));
     }
 
-   /* @AfterMethod
+   @AfterClass
     public void endTests(){
         webDriver.close();
         ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("cmd.exe","taskkill /im chromedriver.exe /f");
+        processBuilder.command("cmd.exe","taskkill /F /IM chromedriver.exe");
 
-    }*/
+    }
 }

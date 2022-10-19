@@ -1,11 +1,11 @@
 package tests.elementsTest;
 
-import base.BasePage;
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TextBoxTest extends BasePage {
+public class TextBoxTest extends BaseTest {
 
     @BeforeMethod
     public void configure(){

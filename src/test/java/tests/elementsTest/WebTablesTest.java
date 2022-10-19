@@ -1,12 +1,12 @@
 package tests.elementsTest;
 
-import base.BasePage;
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class WebTablesTest extends BasePage {
+public class WebTablesTest extends BaseTest {
 
     @DataProvider (name = "validEntry")
     public Object[][] oneUser(){

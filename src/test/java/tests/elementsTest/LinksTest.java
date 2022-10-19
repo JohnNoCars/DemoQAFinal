@@ -1,12 +1,12 @@
 package tests.elementsTest;
 
-import base.BasePage;
+import base.BaseTest;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LinksTest extends BasePage {
+public class LinksTest extends BaseTest {
 
     @BeforeMethod
     public void configure(){

@@ -1,11 +1,11 @@
 package tests.elementsTest;
 
-import base.BasePage;
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class CheckBoxTest extends BasePage {
+public class CheckBoxTest extends BaseTest {
 
     @BeforeMethod
     public void configure(){

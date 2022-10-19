@@ -1,11 +1,11 @@
 package tests.bookStoreTest;
 
-import base.BasePage;
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class RegistrationTest extends BasePage {
+public class RegistrationTest extends BaseTest {
     @BeforeMethod
     public void configure(){
         webDriver.manage().window().maximize();

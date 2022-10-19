@@ -1,13 +1,11 @@
 package tests.bookStoreTest;
 
-import base.BasePage;
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.awt.*;
-
-public class ProfileTest extends BasePage {
+public class ProfileTest extends BaseTest {
 
     @BeforeMethod
     public void configure(){

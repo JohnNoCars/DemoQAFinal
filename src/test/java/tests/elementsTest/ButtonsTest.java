@@ -1,12 +1,12 @@
 package tests.elementsTest;
 
 
-import base.BasePage;
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ButtonsTest extends BasePage {
+public class ButtonsTest extends BaseTest {
 
     @BeforeMethod
     public void configure(){
@@ -16,7 +16,7 @@ public class ButtonsTest extends BasePage {
         sidebarPage.clickButtons();
 
     }
-    @Test
+    @Test(priority = 10)
     public void doubleClick(){
         scroll(buttonsPage.doubleClickBtn());
         buttonsPage.clickDoubleClick();
@@ -24,7 +24,7 @@ public class ButtonsTest extends BasePage {
 
     }
 
-    @Test
+    @Test(priority = 20)
     public void rightClick(){
         scroll(buttonsPage.rightClickBtn());
         buttonsPage.clickRightClick();
@@ -32,7 +32,7 @@ public class ButtonsTest extends BasePage {
 
     }
 
-    @Test
+    @Test(priority = 30)
     public void dynamicClick(){
         scroll(buttonsPage.clickMeBtn());
         buttonsPage.clickClickMe();
