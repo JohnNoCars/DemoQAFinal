@@ -13,7 +13,7 @@ public class SidebarPage {
 
     public SidebarPage(WebDriver webDriver) {
         this.webDriver = webDriver;
-        webDriverWait = new WebDriverWait(webDriver, 10);
+        webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
 
     public WebElement textBoxSide(){
@@ -43,6 +43,36 @@ public class SidebarPage {
     public WebElement dynamicPropertiesSide(){
         return webDriver.findElement(By.id("item-8"));
     }
+    public WebElement practiceFormSide(){
+        return webDriver.findElement(By.id("item-0"));
+    }
+    public WebElement browserWindowsSide(){
+        return webDriver.findElement(By.id("item-0"));
+    }
+    public WebElement alertsSide(){
+        return webDriver.findElement(By.id("item-1"));
+    }
+    public WebElement framesSide(){
+        return webDriver.findElement(By.id("item-2"));
+    }
+    public WebElement nestedFramesSide(){
+        return webDriver.findElement(By.id("item-3"));
+    }
+    public WebElement modalDialogsSide(){
+        return webDriver.findElement(By.id("item-4"));
+    }
+    public WebElement login(){
+        return webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[6]/div/ul/li[1]"));
+    }
+    public WebElement bookStoreAPI(){
+        return webDriver.findElement(By.id("item-4"));
+    }
+    public WebElement profile(){
+        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/div[1]/ul[1]/li[3]"));
+    }
+    public WebElement bookStore(){
+        return webDriver.findElement(By.id("item-2"));
+    }
     public void clickTextBox(){
         textBoxSide().click();
     }
@@ -70,44 +100,14 @@ public class SidebarPage {
     public void clickDynamicProperties(){
         dynamicPropertiesSide().click();
     }
-    public WebElement practiceFormSide(){
-        return webDriver.findElement(By.id("item-0"));
-    }
-    public WebElement browserWindowsSide(){
-        return webDriver.findElement(By.id("item-0"));
-    }
-    public WebElement alertsSide(){
-        return webDriver.findElement(By.id("item-1"));
-    }
-    public WebElement framesSide(){
-        return webDriver.findElement(By.id("item-2"));
-    }
-    public WebElement nestedFramesSide(){
-        return webDriver.findElement(By.id("item-3"));
-    }
-    public WebElement modalDialogsSide(){
-        return webDriver.findElement(By.id("item-4"));
-    }
-    public WebElement login(){
-        return webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[6]/div/ul/li[1]"));
-    }
     public void clickLogin(){
         login().click();
-    }
-    public WebElement bookStore(){
-        return webDriver.findElement(By.id("item-2"));
     }
     public void clickBookStore(){
         bookStore().click();
     }
-    public WebElement profile(){
-        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/div[1]/ul[1]/li[3]"));
-    }
     public void clickProfile(){
         profile().click();
-    }
-    public WebElement bookStoreAPI(){
-        return webDriver.findElement(By.id("item-4"));
     }
     public void clickBookStoreAPI(){
         bookStoreAPI().click();

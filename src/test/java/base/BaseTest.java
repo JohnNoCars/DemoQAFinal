@@ -6,7 +6,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.Response;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -16,11 +15,10 @@ import pages.bookStoreApplication.LoginPage;
 import pages.bookStoreApplication.ProfilePage;
 import pages.bookStoreApplication.RegistrationPage;
 import pages.elements.*;
-//import pages.elements.*;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 
 public class BaseTest {
 
@@ -49,7 +47,7 @@ public class BaseTest {
         webDriver = new ChromeDriver();
         excelReader = new ExcelReader("DemoQAProject.xlsx");
         homeURL = excelReader.getStringData("URL", 1, 0);
-        webDriverWait = new WebDriverWait(webDriver, 10);
+        webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         homePage = new HomePage(webDriver);
         textBoxPage = new TextBoxPage(webDriver);
         checkBoxPage = new CheckBoxPage(webDriver);

@@ -14,7 +14,7 @@ public class TextBoxPage {
 
     public TextBoxPage(WebDriver webDriver) {
         this.webDriver = webDriver;
-        wdWait = new WebDriverWait(webDriver, 10);
+        wdWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
 
     }
     public void scrollIntoView(WebElement webElement) {

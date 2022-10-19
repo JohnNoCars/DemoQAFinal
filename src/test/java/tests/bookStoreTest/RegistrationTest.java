@@ -14,7 +14,7 @@ public class RegistrationTest extends BaseTest {
         removeElement(ad());
         scroll(sidebarPage.profile());
         sidebarPage.clickProfile();
-        visibilityWait(profilePage.register());
+        visibilityWait(profilePage.getRegisterLink());
         profilePage.clickRegister();
 
     }

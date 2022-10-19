@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class CheckBoxPage {
@@ -18,7 +19,7 @@ public class CheckBoxPage {
 
     public CheckBoxPage(WebDriver webDriver) {
         this.webDriver = webDriver;
-        wdWait = new WebDriverWait(webDriver, 10);
+        wdWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
 
     public void scrollIntoView(WebElement webElement) {

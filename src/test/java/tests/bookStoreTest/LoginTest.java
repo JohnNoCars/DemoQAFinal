@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ProfileTest extends BaseTest {
+public class LoginTest extends BaseTest {
 
     @BeforeMethod
     public void configure(){
@@ -22,13 +22,19 @@ public class ProfileTest extends BaseTest {
         profilePage.clickRegister();
     }
     @Test
-    public void userCanLogIn(){
+    public void userCanLogIn() throws InterruptedException {
         scroll(sidebarPage.login());
         sidebarPage.clickLogin();
+        loginPage.userName().clear();
         loginPage.fillUsername(excelReader.getStringData("BookStoreLogin",1,0));
+        loginPage.password();
         loginPage.fillPassword(excelReader.getStringData("BookStoreLogin",1,1));
         loginPage.clickLoginBtn();
-        Assert.assertTrue(loginPage.profilePage().isDisplayed());
+        Thread.sleep(2000);
+        visibilityWait(profilePage.getProfilePageTitle());
+        Assert.assertTrue(profilePage.getProfilePageTitle().isDisplayed());
+        visibilityWait(profilePage.getLogoutButton());
+        Assert.assertEquals(profilePage.getUsernameValue().getText(), excelReader.getStringData("BookStoreLogin",1,0));
 
     }
 

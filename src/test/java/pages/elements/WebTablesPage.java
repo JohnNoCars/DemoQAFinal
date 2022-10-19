@@ -16,7 +16,7 @@ public class WebTablesPage {
 
     public WebTablesPage(WebDriver webDriver) {
         this.webDriver = webDriver;
-        this.webDriverWait = new WebDriverWait(webDriver, 10);
+        this.webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
 
     public WebElement addRecord(){
