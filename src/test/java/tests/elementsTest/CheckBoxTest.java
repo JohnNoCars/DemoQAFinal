@@ -18,9 +18,9 @@ public class CheckBoxTest extends BaseTest {
     @Test
     public void userCanExpandAllCheckBoxes(){
         sidebarPage.clickCheckBox();
-        visibilityWait(checkBoxPage.expandAllElements());
+        visibilityWait(checkBoxPage.getExpandAllElementsButton());
         int checkBoxNum = checkBoxPage.allCheckBoxes().size();
-        checkBoxPage.expandAllFolders();
+        checkBoxPage.clickExpandAllElements();
         int checkBoxNumAfter = checkBoxPage.allCheckBoxes().size();
 
         Assert.assertNotEquals(checkBoxNum,checkBoxNumAfter);
@@ -29,8 +29,8 @@ public class CheckBoxTest extends BaseTest {
     @Test
     public void userCanCheckAllCheckBoxes(){
         sidebarPage.clickCheckBox();
-        visibilityWait(checkBoxPage.expandAllElements());
-        checkBoxPage.expandAllFolders();
+        visibilityWait(checkBoxPage.getExpandAllElementsButton());
+        checkBoxPage.clickExpandAllElements();
         checkBoxPage.clickNotesCheckbox();
         checkBoxPage.clickCommandsCheckbox();
         checkBoxPage.clickWorkSpaceCheckbox();
@@ -54,8 +54,8 @@ public class CheckBoxTest extends BaseTest {
     @Test
     public void userCanCheckSpecificCheckboxes(){
         sidebarPage.clickCheckBox();
-        visibilityWait(checkBoxPage.expandAllElements());
-        checkBoxPage.expandAllFolders();
+        visibilityWait(checkBoxPage.getExpandAllElementsButton());
+        checkBoxPage.clickExpandAllElements();
         int size = checkBoxPage.allCheckBoxes().size();
         for(int i = 0; i < size; i++) {
             checkBoxPage.clickSpecificCheckbox(i);
@@ -67,8 +67,8 @@ public class CheckBoxTest extends BaseTest {
     @Test
     public void userCanSelectDeselectCheckbox(){
         sidebarPage.clickCheckBox();
-        visibilityWait(checkBoxPage.expandAllElements());
-        checkBoxPage.expandAllFolders();
+        visibilityWait(checkBoxPage.getExpandAllElementsButton());
+        checkBoxPage.clickExpandAllElements();
         checkBoxPage.clickCommandsCheckbox();
         Assert.assertEquals(excelReader.getStringData("CheckBox",1,2), checkBoxPage.getTextSuccessMessage());
         checkBoxPage.clickCommandsCheckbox();
@@ -77,13 +77,13 @@ public class CheckBoxTest extends BaseTest {
     @Test
     public void userCanCollapseCheckboxTree(){
         sidebarPage.clickCheckBox();
-        visibilityWait(checkBoxPage.expandAllElements());
+        visibilityWait(checkBoxPage.getExpandAllElementsButton());
         int beforeNum = checkBoxPage.allCheckBoxes().size();
-        checkBoxPage.expandAllFolders();
+        checkBoxPage.clickExpandAllElements();
         int afterNum = checkBoxPage.allCheckBoxes().size();
         Assert.assertNotEquals(beforeNum,afterNum);
-        scroll(checkBoxPage.collapseAllElements());
-        checkBoxPage.collapseAllFolders();
+        scrollIntoView(checkBoxPage.getCollapseAllElementsButton());
+        checkBoxPage.clickCollapseAllElements();
         int afterNum1 = checkBoxPage.allCheckBoxes().size();
         Assert.assertEquals(beforeNum,afterNum1);
     }

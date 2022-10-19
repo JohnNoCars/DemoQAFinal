@@ -5,8 +5,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
 public class LinksPage {
 
     public WebDriver webDriver;
@@ -18,59 +16,60 @@ public class LinksPage {
     public void scrollIntoView(WebElement webElement) {
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", webElement);
     }
-    public WebElement homeLink(){
+    public WebElement getHomeLink(){
         return webDriver.findElement(By.id("simpleLink"));
     }
-    public WebElement homeDynamicLink(){
+    public WebElement getHomeDynamicLink(){
         return webDriver.findElement(By.id("dynamicLink"));
     }
-    public WebElement createdLink(){
+    public WebElement getCreatedLink(){
         return webDriver.findElement(By.id("created"));
     }
-    public WebElement noContentLink(){
+    public WebElement getNoContentLink(){
         return webDriver.findElement(By.id("no-content"));
     }
-    public WebElement movedLink(){
+    public WebElement getMovedLink(){
         return webDriver.findElement(By.id("moved"));
     }
-    public WebElement badRequestLink(){
+    public WebElement getBadRequestLink(){
         return webDriver.findElement(By.id("bad-request"));
     }
-    public WebElement unauthorizedLink(){
+    public WebElement getUnauthorizedLink(){
         return webDriver.findElement(By.id("unauthorized"));
     }
-    public WebElement forbiddenLink(){
+    public WebElement getForbiddenLink(){
         return webDriver.findElement(By.id("forbidden"));
     }
-    public WebElement notFoundLink(){
+    public WebElement getNotFoundLink(){
         return webDriver.findElement(By.id("invalid-url"));
     }
+    //----------------------------------------------------------------------------------------
     public void clickHomeLink(){
-        homeLink().click();
+        getHomeLink().click();
     }
     public void clickDynamicLink(){
-        homeDynamicLink().click();
+        getHomeDynamicLink().click();
     }
     public void clickCreatedLink(){
-        createdLink().click();
+        getCreatedLink().click();
     }
     public void clickNoContentLink(){
-        noContentLink().click();
+        getNoContentLink().click();
     }
     public void clickMovedLink(){
-        movedLink().click();
+        getMovedLink().click();
     }
     public void clickBadRequestLink(){
-        badRequestLink().click();
+        getBadRequestLink().click();
     }
     public void clickUnauthorizedLink(){
-        unauthorizedLink().click();
+        getUnauthorizedLink().click();
     }
     public void clickForbiddenLink(){
-        forbiddenLink().click();
+        getForbiddenLink().click();
     }
     public void clickNotFoundLink(){
-        notFoundLink().click();
+        getNotFoundLink().click();
     }
     public String getLinkResponse(){
         return webDriver.findElement(By.id("linkResponse")).getText();

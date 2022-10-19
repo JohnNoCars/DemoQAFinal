@@ -17,17 +17,17 @@ public class LoginTest extends BaseTest {
     }
     @Test
     public void userCanClickRegister() {
-        scroll(sidebarPage.profile());
+        scrollIntoView(sidebarPage.profile());
         sidebarPage.clickProfile();
         profilePage.clickRegister();
     }
     @Test
     public void userCanLogIn() throws InterruptedException {
-        scroll(sidebarPage.login());
+        scrollIntoView(sidebarPage.login());
         sidebarPage.clickLogin();
-        loginPage.userName().clear();
+        loginPage.getUserName().clear();
         loginPage.fillUsername(excelReader.getStringData("BookStoreLogin",1,0));
-        loginPage.password();
+        loginPage.getPassword();
         loginPage.fillPassword(excelReader.getStringData("BookStoreLogin",1,1));
         loginPage.clickLoginBtn();
         Thread.sleep(2000);

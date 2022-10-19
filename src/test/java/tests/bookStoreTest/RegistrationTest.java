@@ -12,7 +12,7 @@ public class RegistrationTest extends BaseTest {
         webDriver.get(homeURL);
         homePage.clickBookStoreApplication();
         removeElement(ad());
-        scroll(sidebarPage.profile());
+        scrollIntoView(sidebarPage.profile());
         sidebarPage.clickProfile();
         visibilityWait(profilePage.getRegisterLink());
         profilePage.clickRegister();

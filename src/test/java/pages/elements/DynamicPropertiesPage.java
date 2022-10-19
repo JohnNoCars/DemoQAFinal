@@ -17,19 +17,21 @@ public class DynamicPropertiesPage {
         wdWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
 
-    public WebElement enableAfter(){
+    public WebElement getEnableAfter(){
         return webDriver.findElement(By.id("enableAfter"));
     }
 
-    public WebElement colorChange(){
+    public WebElement getColorChange(){
         return webDriver.findElement(By.id("colorChange"));
     }
 
-    public WebElement visibleAfter(){
+    public WebElement getVisibleAfter(){
         return webDriver.findElement(By.id("visibleAfter"));
     }
 
+    //--------------------------------------------------------------------------------------------
+
     public String changedColor(){
-        return colorChange().getText();
+        return getColorChange().getText();
     }
 }

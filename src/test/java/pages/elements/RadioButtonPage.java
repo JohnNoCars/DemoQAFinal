@@ -11,22 +11,22 @@ public class RadioButtonPage {
         this.webDriver = webDriver;
     }
 
-    public WebElement yesBtn(){
+    public WebElement getYesButton(){
         return webDriver.findElement(By.id("yesRadio"));
     }
 
-    public WebElement impressiveBtn(){
+    public WebElement getImpressiveButton(){
         return webDriver.findElement(By.id("impressiveRadio"));
     }
 
-    public WebElement noBtn(){
+    public WebElement getNoButton(){
         return  webDriver.findElement(By.id("noRadio"));
     }
 
     public WebElement getSuccessMessage() {
         return webDriver.findElement(By.className("text-success"));
     }
-
+    //---------------------------------------------------------------------------------------------------
     public String radioBtnSelectedText(){
         return getSuccessMessage().getText();
     }

@@ -19,12 +19,8 @@ public class WebTablesPage {
         this.webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
 
-    public WebElement addRecord(){
+    public WebElement getAddRecordButton(){
         return webDriver.findElement(By.id("addNewRecordButton"));
-    }
-
-    public void clickAddRecord(){
-        addRecord().click();
     }
 
     public WebElement firstName(){
@@ -54,17 +50,44 @@ public class WebTablesPage {
     public WebElement submitBtn(){
         return webDriver.findElement(By.id("submit"));
     }
+
     public WebElement deleteBtn(int rowNum){
         return  webDriver.findElement(By.id("delete-record-" + rowNum));
     }
+    public List<WebElement> listOfAllRows(){
+        return webDriver.findElements(By.className("rt-tr-group"));
+    }
+    public WebElement editBtn(int rowNum){
+        return  webDriver.findElement(By.id("edit-record-" + rowNum));
+    }
+
+    public WebElement getTableRow(int index){
+        return listOfAllRows().get(index);
+    }
+    public WebElement searchBox(){
+        return  webDriver.findElement(By.id("searchBox"));
+    }
+
+    public WebElement displayedRows(){
+        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
+    }
+
+    public WebElement nextBtn(){
+        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/div[2]/div[1]/div[3]/button[1]"));
+    }
+
+    public WebElement previousBtn(){
+        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/button[1]"));
+    }
+
     public void clickDeleteBtn(int rowNum){
         deleteBtn(rowNum).click();
     }
 
-    public WebElement editBtn(int rowNum){
-        return  webDriver.findElement(By.id("edit-record-" + rowNum));
-
+    public void clickAddRecord(){
+        getAddRecordButton().click();
     }
+
     public void clickEditBtn(int rowNum){
         editBtn(rowNum).click();
     }
@@ -113,28 +136,12 @@ public class WebTablesPage {
         submitBtn().click();
     }
 
-    public List<WebElement> listOfAllRows(){
-        return webDriver.findElements(By.className("rt-tr-group"));
-    }
-
-    public WebElement getTableRow(int index){
-        return listOfAllRows().get(index);
-    }
-
     public String getRowDetails(int index){
         return getTableRow(index).getText();
     }
 
-    public WebElement searchBox(){
-        return  webDriver.findElement(By.id("searchBox"));
-    }
-
     public void searchTable(String s){
         searchBox().sendKeys(s);
-    }
-
-    public WebElement displayedRows(){
-        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/div[2]/div[1]/div[2]/span[2]/select[1]"));
     }
 
     public void selectNumberRows(int i){
@@ -145,14 +152,6 @@ public class WebTablesPage {
         displayedRows().click();
         Select select = new Select(displayedRows());
         select.selectByValue(String.valueOf(i));
-    }
-
-    public WebElement nextBtn(){
-        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/div[2]/div[1]/div[3]/button[1]"));
-    }
-
-    public WebElement previousBtn(){
-        return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/button[1]"));
     }
 
     public void clickNxtBtn(){

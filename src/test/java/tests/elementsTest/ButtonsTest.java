@@ -18,7 +18,7 @@ public class ButtonsTest extends BaseTest {
     }
     @Test(priority = 10)
     public void doubleClick(){
-        scroll(buttonsPage.doubleClickBtn());
+        scrollIntoView(buttonsPage.getDoubleClickButton());
         buttonsPage.clickDoubleClick();
         Assert.assertEquals(excelReader.getStringData("Buttons",1,0), buttonsPage.getDCMessage());
 
@@ -26,7 +26,7 @@ public class ButtonsTest extends BaseTest {
 
     @Test(priority = 20)
     public void rightClick(){
-        scroll(buttonsPage.rightClickBtn());
+        scrollIntoView(buttonsPage.getRightClickButton());
         buttonsPage.clickRightClick();
         Assert.assertEquals(excelReader.getStringData("Buttons",1,1), buttonsPage.getRCMessage());
 
@@ -34,7 +34,7 @@ public class ButtonsTest extends BaseTest {
 
     @Test(priority = 30)
     public void dynamicClick(){
-        scroll(buttonsPage.clickMeBtn());
+        scrollIntoView(buttonsPage.getClickMeButton());
         buttonsPage.clickClickMe();
         Assert.assertEquals(excelReader.getStringData("Buttons",1,2), buttonsPage.getCMMessage());
 

@@ -11,29 +11,31 @@ public class LoginPage {
         this.webDriver = webDriver;
     }
 
-    public WebElement userName(){
+    public WebElement getUserName(){
         return webDriver.findElement(By.xpath("//*[@id=\"userName\"]"));
     }
-    public WebElement password(){
+    public WebElement getPassword(){
         return webDriver.findElement(By.xpath("//*[@id=\"password\"]"));
     }
-    public WebElement loginBtn(){
+    public WebElement getLoginBtn(){
         return webDriver.findElement(By.xpath("//*[@id=\"login\"]"));
     }
-    public WebElement newUserBtn(){
+    public WebElement getNewUserBtn(){
         return webDriver.findElement(By.xpath("//*[@id=\"newUser\"]"));
     }
+
+    //-----------------------------------------------------------------------
     public void fillUsername(String s){
-        userName().sendKeys(s);
+        getUserName().sendKeys(s);
     }
     public void fillPassword(String s){
-        password().sendKeys(s);
+        getPassword().sendKeys(s);
     }
     public void clickLoginBtn(){
-        loginBtn().click();
+        getLoginBtn().click();
     }
     public void clickNewUserBtn(){
-        newUserBtn().click();
+        getNewUserBtn().click();
     }
 
 }

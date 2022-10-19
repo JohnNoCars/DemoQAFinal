@@ -13,30 +13,30 @@ public class ButtonsPage {
         this.webDriver = webDriver;
     }
 
-    public WebElement doubleClickBtn(){
+    public WebElement getDoubleClickButton(){
         return webDriver.findElement(By.id("doubleClickBtn"));
     }
 
-    public WebElement rightClickBtn(){
+    public WebElement getRightClickButton(){
         return webDriver.findElement(By.id("rightClickBtn"));
     }
 
-    public WebElement clickMeBtn(){
+    public WebElement getClickMeButton(){
         return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/button[1]"));
     }
 
     public void clickDoubleClick(){
         Actions action = new Actions(webDriver);
-        action.doubleClick(doubleClickBtn()).perform();
+        action.doubleClick(getDoubleClickButton()).perform();
     }
 
     public void clickRightClick(){
         Actions action = new Actions(webDriver);
-        action.contextClick(rightClickBtn()).perform();
+        action.contextClick(getRightClickButton()).perform();
     }
 
     public void clickClickMe(){
-        clickMeBtn().click();
+        getClickMeButton().click();
     }
 
     public String getDCMessage(){

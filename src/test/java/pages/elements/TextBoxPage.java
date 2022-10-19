@@ -21,41 +21,41 @@ public class TextBoxPage {
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", webElement);
     }
 
-    public WebElement fullName(){
+    public WebElement getFullName(){
         return webDriver.findElement(By.id("userName"));
     }
 
-    public WebElement email(){
+    public WebElement getEmail(){
         return webDriver.findElement(By.id("userEmail"));
     }
 
-    public WebElement currentAddress(){
+    public WebElement getCurrentAddress(){
         return webDriver.findElement(By.id("currentAddress"));
     }
 
-    public WebElement permanentAddress(){
+    public WebElement getPermanentAddress(){
         return webDriver.findElement(By.id("permanentAddress"));
     }
 
-    public WebElement submitBtn(){
+    public WebElement getSubmitButton(){
         return webDriver.findElement(By.id("submit"));
     }
 
-    public void clickSubmit(){
-        scrollIntoView(submitBtn());
-        submitBtn().click();
-    }
-
-    public WebElement outputTxt(){
+    public WebElement getOutputText(){
         return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/form[1]/div[6]/div[1]"));
     }
 
-    public String getOutput(){
-        return outputTxt().getText();
+    public WebElement getFieldError(){
+        return webDriver.findElement(By.cssSelector(".mr-sm-2.field-error.form-control"));
     }
 
-    public WebElement getFieldError(){
-        return webDriver.findElement(By.className("mr-sm-2 field-error form-control"));
+    public void clickSubmit(){
+        scrollIntoView(getSubmitButton());
+        getSubmitButton().click();
+    }
+
+    public String getOutput(){
+        return getOutputText().getText();
     }
 
 

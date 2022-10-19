@@ -3,9 +3,6 @@ package pages.bookStoreApplication;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RegistrationPage {
 
@@ -14,42 +11,42 @@ public class RegistrationPage {
     public RegistrationPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
-    public WebElement firstName(){
+    public WebElement getFirstName(){
         return webDriver.findElement(By.id("firstname"));
     }
-    public WebElement lastName(){
+    public WebElement getLastName(){
         return webDriver.findElement(By.id("lastname"));
     }
-    public WebElement userName(){
+    public WebElement getUserName(){
         return webDriver.findElement(By.id("userName"));
     }
-    public WebElement password(){
+    public WebElement getPassword(){
         return webDriver.findElement(By.id("password"));
     }
-    public  WebElement registerBtn(){
+    public  WebElement getRegistrationBtn(){
         return webDriver.findElement(By.id("register"));
     }
-    public WebElement backToLoginBtn(){
+    public WebElement getBackToLoginButton(){
         return webDriver.findElement(By.id("gotologin"));
-
     }
+    //--------------------------------------------------------------------------------------
     public void fillFirstName(String s){
-        firstName().sendKeys(s);
+        getFirstName().sendKeys(s);
     }
     public void fillLastName(String s){
-        lastName().sendKeys(s);
+        getLastName().sendKeys(s);
     }
     public void fillUserName(String s){
-        userName().sendKeys(s);
+        getUserName().sendKeys(s);
     }
     public void fillPassword(String s){
-        password().sendKeys(s);
+        getPassword().sendKeys(s);
     }
     public void clickRegisterButton(){
-        registerBtn().click();
+        getRegistrationBtn().click();
     }
     public void clickBackToLoginBtn(){
-        backToLoginBtn().click();
+        getBackToLoginButton().click();
     }
     /*public void overrideReCaptcha(){
         WebElement iFrame = webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[6]/div/div/div/iframe"));

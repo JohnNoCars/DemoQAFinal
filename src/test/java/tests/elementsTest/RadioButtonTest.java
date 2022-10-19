@@ -17,18 +17,18 @@ public class RadioButtonTest extends BaseTest {
 
     @Test
     public void userCanSelectYes(){
-        click(radioButtonPage.yesBtn());
+        click(radioButtonPage.getYesButton());
         Assert.assertEquals(excelReader.getStringData("RadioButton",1,0),radioButtonPage.radioBtnSelectedText());
     }
 
     @Test
     public void userCanSelectImpressive(){
-        click(radioButtonPage.impressiveBtn());
+        click(radioButtonPage.getImpressiveButton());
         Assert.assertEquals(excelReader.getStringData("RadioButton",2,0),radioButtonPage.radioBtnSelectedText());
     }
     @Test
     public void userCannotSelectNo(){
-        click(radioButtonPage.noBtn());
-        Assert.assertFalse(radioButtonPage.noBtn().isSelected());
+        click(radioButtonPage.getNoButton());
+        Assert.assertFalse(radioButtonPage.getNoButton().isSelected());
     }
 }

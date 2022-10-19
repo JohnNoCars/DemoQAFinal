@@ -73,7 +73,7 @@ public class BaseTest {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    public void scroll(WebElement webElement){
+    public void scrollIntoView(WebElement webElement){
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", webElement);
     }
 

@@ -19,57 +19,57 @@ public class LinksTest extends BaseTest {
 
     @Test
     public void userCanOpenHomepageInNewTab(){
-        scroll(linksPage.homeLink());
+        scrollIntoView(linksPage.getHomeLink());
         linksPage.clickHomeLink();
         Assert.assertEquals(excelReader.getStringData("Links",1,0),webDriver.getTitle());
     }
 
     @Test
     public void userCanOpenDynamicLink(){
-        scroll(linksPage.homeDynamicLink());
+        scrollIntoView(linksPage.getHomeDynamicLink());
         linksPage.clickDynamicLink();
         Assert.assertEquals(excelReader.getStringData("Links",1,0),webDriver.getTitle());
     }
 
     @Test
     public void userCanClickCreatedLink(){
-        scroll(linksPage.createdLink());
+        scrollIntoView(linksPage.getCreatedLink());
         linksPage.clickCreatedLink();
         Assert.assertEquals(excelReader.getStringData("Links",2,0), linksPage.getLinkResponse());
     }
     @Test
     public void userCanClickNoContentLink(){
-        scroll(linksPage.noContentLink());
+        scrollIntoView(linksPage.getNoContentLink());
         linksPage.clickNoContentLink();
         Assert.assertEquals(excelReader.getStringData("Links",3,0), linksPage.getLinkResponse());
     }
     @Test
     public void userCanClickMovedLink(){
-        scroll(linksPage.movedLink());
+        scrollIntoView(linksPage.getMovedLink());
         linksPage.clickMovedLink();
         Assert.assertEquals(excelReader.getStringData("Links",4,0),linksPage.getLinkResponse());
     }
     @Test
     public void userCanClickBadRequestLink(){
-        scroll(linksPage.badRequestLink());
+        scrollIntoView(linksPage.getBadRequestLink());
         linksPage.clickBadRequestLink();
         Assert.assertEquals(excelReader.getStringData("Links",5,0 ), linksPage.getLinkResponse());
     }
     @Test
     public void userCanClickUnauthorizedLink(){
-        scroll(linksPage.unauthorizedLink());
+        scrollIntoView(linksPage.getUnauthorizedLink());
         linksPage.clickUnauthorizedLink();
         Assert.assertEquals(excelReader.getStringData("Links",6,0), linksPage.getLinkResponse());
     }
     @Test
     public void userCanClickForbiddenLink(){
-        scroll(linksPage.forbiddenLink());
+        scrollIntoView(linksPage.getForbiddenLink());
         linksPage.clickForbiddenLink();
         Assert.assertEquals(excelReader.getStringData("Links",7,0), linksPage.getLinkResponse());
     }
     @Test
     public void userCanClickNotFoundLink(){
-        scroll(linksPage.notFoundLink());
+        scrollIntoView(linksPage.getNotFoundLink());
         linksPage.clickNotFoundLink();
         Assert.assertEquals(excelReader.getStringData("Links", 8,0), linksPage.getLinkResponse());
     }

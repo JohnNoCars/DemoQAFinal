@@ -18,41 +18,41 @@ public class TextBoxTest extends BaseTest {
     @Test
     public void userCanSubmitValidData(){
         sidebarPage.clickTextBox();
-        visibilityWait(textBoxPage.fullName());
+        visibilityWait(textBoxPage.getFullName());
 
         String fullName = excelReader.getStringData("TextBox",1,0);
         String email = excelReader.getStringData("TextBox",1,1);
         String currentAddress = excelReader.getStringData("TextBox",1,2);
         String permanentAddress = excelReader.getStringData("TextBox",1,3);
 
-        inputText(textBoxPage.fullName(), fullName);
-        inputText(textBoxPage.email(), email);
-        inputText(textBoxPage.currentAddress(), currentAddress);
-        inputText(textBoxPage.permanentAddress(), permanentAddress);
+        inputText(textBoxPage.getFullName(), fullName);
+        inputText(textBoxPage.getEmail(), email);
+        inputText(textBoxPage.getCurrentAddress(), currentAddress);
+        inputText(textBoxPage.getPermanentAddress(), permanentAddress);
         textBoxPage.clickSubmit();
 
         String actualOutput = textBoxPage.getOutput();
         String expectedOutput = excelReader.getStringData("TextBox", 1, 4);
-        Assert.assertTrue(textBoxPage.outputTxt().isDisplayed());
+        Assert.assertTrue(textBoxPage.getOutputText().isDisplayed());
         Assert.assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
     public void userCannotSubmitInvalidEmail(){
         sidebarPage.clickTextBox();
-        visibilityWait(textBoxPage.fullName());
+        visibilityWait(textBoxPage.getFullName());
 
         String fullName = excelReader.getStringData("TextBox",2,0);
         String email = excelReader.getStringData("TextBox",2,1);
         String currentAddress = excelReader.getStringData("TextBox",2,2);
         String permanentAddress = excelReader.getStringData("TextBox",2,3);
 
-        inputText(textBoxPage.fullName(), fullName);
-        inputText(textBoxPage.email(), email);
-        inputText(textBoxPage.currentAddress(), currentAddress);
-        inputText(textBoxPage.permanentAddress(), permanentAddress);
+        inputText(textBoxPage.getFullName(), fullName);
+        inputText(textBoxPage.getEmail(), email);
+        inputText(textBoxPage.getCurrentAddress(), currentAddress);
+        inputText(textBoxPage.getPermanentAddress(), permanentAddress);
         textBoxPage.clickSubmit();
 
-        Assert.assertFalse(textBoxPage.outputTxt().isDisplayed());
+        Assert.assertFalse(textBoxPage.getOutputText().isDisplayed());
     }
 }

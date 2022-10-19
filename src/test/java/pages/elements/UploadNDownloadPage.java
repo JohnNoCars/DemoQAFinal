@@ -12,20 +12,20 @@ public class UploadNDownloadPage {
         this.webDriver = webDriver;
     }
 
-    public WebElement downloadBtn(){
+    public WebElement getDownloadButton(){
         return webDriver.findElement(By.id("downloadButton"));
     }
 
-    public WebElement chooseFileBtn(){
+    public WebElement getChooseFileButton(){
         return webDriver.findElement(By.id("uploadFile"));
     }
 
     public void clickDownload(){
-        downloadBtn().click();
+        getDownloadButton().click();
     }
 
     public void chooseFile(String filePath){
-        chooseFileBtn().sendKeys(filePath);
+        getChooseFileButton().sendKeys(filePath);
     }
 
     public String getChooseFileMessage(){
