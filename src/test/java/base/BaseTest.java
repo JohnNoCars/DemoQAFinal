@@ -23,6 +23,7 @@ import java.time.Duration;
 public class BaseTest {
 
     public WebDriver webDriver;
+    public Robot robot;
     public ExcelReader excelReader;
     public String homeURL;
     public WebDriverWait webDriverWait;
@@ -42,9 +43,10 @@ public class BaseTest {
     public LoginPage loginPage;
 
     @BeforeClass
-    public void setUpConfig() throws IOException {
+    public void setUpConfig() throws IOException, AWTException {
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
+        robot = new Robot();
         excelReader = new ExcelReader("DemoQAProject.xlsx");
         homeURL = excelReader.getStringData("URL", 1, 0);
         webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
@@ -88,7 +90,6 @@ public class BaseTest {
         webElement.sendKeys(string);
     }
     public void switchTab() throws AWTException {
-        Robot robot = new Robot();
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_TAB);
         robot.keyRelease(KeyEvent.VK_TAB);
@@ -96,14 +97,12 @@ public class BaseTest {
 
     }
     public void closeTab() throws AWTException {
-        Robot robot = new Robot();
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_W);
         robot.keyRelease(KeyEvent.VK_W);
         robot.keyRelease(KeyEvent.VK_CONTROL);
     }
-    public void zoomIn(int zoomInTimes) throws AWTException {
-        Robot robot = new Robot();
+    public void zoomIn(int zoomInTimes) {
         for (int i = 0; i < zoomInTimes; i++) {
 
             robot.keyPress(KeyEvent.VK_CONTROL);
@@ -113,8 +112,7 @@ public class BaseTest {
         }
 
     }
-    public void zoomOut(int zoomOutTimes) throws AWTException {
-        Robot robot = new Robot();
+    public void zoomOut(int zoomOutTimes) {
         for (int i = 0; i < zoomOutTimes; i++) {
 
             robot.keyPress(KeyEvent.VK_CONTROL);
