@@ -87,5 +87,13 @@ public class CheckBoxTest extends BaseTest {
         int afterNum1 = checkBoxPage.allCheckBoxes().size();
         Assert.assertEquals(beforeNum,afterNum1);
     }
+   /* @Test
+    public void userCanClickSpecificCheckBox() throws InterruptedException {
+        sidebarPage.clickCheckBox();
+        visibilityWait(checkBoxPage.getExpandAllElementsButton());
+        checkBoxPage.clickExpandAllElements();
+        Thread.sleep(2000);
+        checkBoxPage.checkCheckBox("Home");
+    }*/
 
 }

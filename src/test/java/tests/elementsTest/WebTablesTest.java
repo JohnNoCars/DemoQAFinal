@@ -187,19 +187,19 @@ public class WebTablesTest extends BaseTest {
     @Test(dataProvider = "validEntry")
     public void userCanEditEntry(String firstName, String lastName, String email, String age, String salary, String department){
         webTablesPage.clickEditBtn(1);
-        visibilityWait(webTablesPage.firstName());
+        visibilityWait(webTablesPage.getFirstName());
         //webTablesPage.clearBox();
-        webTablesPage.firstName().clear();
+        webTablesPage.getFirstName().clear();
         webTablesPage.fillFirstName(firstName);
-        webTablesPage.lastName().clear();
+        webTablesPage.getLastName().clear();
         webTablesPage.fillLastName(lastName);
-        webTablesPage.email().clear();
+        webTablesPage.getEmail().clear();
         webTablesPage.fillEmail(email);
-        webTablesPage.age().clear();
+        webTablesPage.getAge().clear();
         webTablesPage.fillAge(age);
-        webTablesPage.salary().clear();
+        webTablesPage.getSalary().clear();
         webTablesPage.fillSalary(salary);
-        webTablesPage.department().clear();
+        webTablesPage.getDepartment().clear();
         webTablesPage.fillDepartment(department);
         webTablesPage.clickSubmitBtn();
         Assert.assertEquals(excelReader.getStringData("WebTables",1,6), webTablesPage.getRowDetails(0));

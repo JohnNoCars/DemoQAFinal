@@ -23,36 +23,36 @@ public class WebTablesPage {
         return webDriver.findElement(By.id("addNewRecordButton"));
     }
 
-    public WebElement firstName(){
+    public WebElement getFirstName(){
         return webDriver.findElement(By.id("firstName"));
     }
 
-    public WebElement lastName(){
+    public WebElement getLastName(){
         return webDriver.findElement(By.id("lastName"));
     }
 
-    public WebElement email(){
+    public WebElement getEmail(){
         return webDriver.findElement(By.id("userEmail"));
     }
 
-    public WebElement age(){
+    public WebElement getAge(){
         return webDriver.findElement(By.id("age"));
     }
 
-    public WebElement salary(){
+    public WebElement getSalary(){
         return webDriver.findElement(By.id("salary"));
     }
 
-    public WebElement department(){
+    public WebElement getDepartment(){
         return webDriver.findElement(By.id("department"));
     }
 
-    public WebElement submitBtn(){
+    public WebElement getSubmitButton(){
         return webDriver.findElement(By.id("submit"));
     }
 
     public WebElement deleteBtn(int rowNum){
-        return  webDriver.findElement(By.id("delete-record-" + rowNum));
+        return  webDriver.findElement(By.cssSelector("delete-record-" + rowNum));
     }
     public List<WebElement> listOfAllRows(){
         return webDriver.findElements(By.className("rt-tr-group"));
@@ -79,6 +79,7 @@ public class WebTablesPage {
     public WebElement previousBtn(){
         return webDriver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/button[1]"));
     }
+    //-----------------------------------------------------------------------------------------------------------------------------
 
     public void clickDeleteBtn(int rowNum){
         deleteBtn(rowNum).click();
@@ -93,47 +94,47 @@ public class WebTablesPage {
     }
 
     public void fillFirstName(String s){
-        firstName().sendKeys(s);
+        getFirstName().sendKeys(s);
     }
 
     public void clearBox(){
-        firstName().sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        firstName().sendKeys(Keys.DELETE);
-        lastName().sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        lastName().sendKeys(Keys.DELETE);
-        email().sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        email().sendKeys(Keys.DELETE);
-        age().sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        age().sendKeys(Keys.DELETE);
-        salary().sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        salary().sendKeys(Keys.DELETE);
-        department().sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        department().sendKeys(Keys.DELETE);
+        getFirstName().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        getFirstName().sendKeys(Keys.DELETE);
+        getLastName().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        getLastName().sendKeys(Keys.DELETE);
+        getEmail().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        getEmail().sendKeys(Keys.DELETE);
+        getAge().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        getAge().sendKeys(Keys.DELETE);
+        getSalary().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        getSalary().sendKeys(Keys.DELETE);
+        getDepartment().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        getDepartment().sendKeys(Keys.DELETE);
 
     }
 
     public void fillLastName(String s){
-        lastName().sendKeys(s);
+        getLastName().sendKeys(s);
     }
 
     public void fillEmail(String s){
-        email().sendKeys(s);
+        getEmail().sendKeys(s);
     }
 
     public void fillAge(String s){
-        age().sendKeys(s);
+        getAge().sendKeys(s);
     }
 
     public void fillSalary(String s){
-        salary().sendKeys(s);
+        getSalary().sendKeys(s);
     }
 
     public void fillDepartment(String s){
-        department().sendKeys(s);
+        getDepartment().sendKeys(s);
     }
 
     public void clickSubmitBtn(){
-        submitBtn().click();
+        getSubmitButton().click();
     }
 
     public String getRowDetails(int index){

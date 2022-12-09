@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class SidebarPage {
     public WebDriver webDriver;
@@ -15,7 +16,6 @@ public class SidebarPage {
         this.webDriver = webDriver;
         webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
-
     public WebElement textBoxSide(){
         return webDriver.findElement(By.id("item-0"));
     }
@@ -73,6 +73,8 @@ public class SidebarPage {
     public WebElement bookStore(){
         return webDriver.findElement(By.id("item-2"));
     }
+
+    //---------------------------------------------------------------------
     public void clickTextBox(){
         textBoxSide().click();
     }
@@ -99,6 +101,9 @@ public class SidebarPage {
     }
     public void clickDynamicProperties(){
         dynamicPropertiesSide().click();
+    }
+    public void clickPracticeForm(){
+        practiceFormSide().click();
     }
     public void clickLogin(){
         login().click();

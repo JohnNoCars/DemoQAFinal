@@ -98,6 +98,9 @@ public class CheckBoxPage {
     public WebElement excelFileCheckbox(){
         return allCheckBoxes().get(16);
     }
+    public List<WebElement> getTextSuccessElements(){
+        return webDriver.findElements(By.className("text-success"));
+    }
 
     //---------------------------------------------------------------------------
     public void clickHomeCheckbox(){
@@ -173,13 +176,10 @@ public class CheckBoxPage {
     public void collapseAllCheckboxes(){
         webDriver.findElement(By.cssSelector("#tree-node > div > button.rct-option.rct-option-collapse-all > svg > path")).click();
     }
+
     public void clickSpecificCheckbox(int i){
         scrollIntoView(allCheckBoxes().get(i));
         allCheckBoxes().get(i).click();
-    }
-
-    public List<WebElement> getTextSuccessElements(){
-        return webDriver.findElements(By.className("text-success"));
     }
 
     public void scrollIntoView(WebElement webElement) {
@@ -207,6 +207,15 @@ public class CheckBoxPage {
         }
 
         System.out.println(checkBoxPage.getTextSuccessMessage());
+    }
+    public void checkCheckBox(String checkBoxName){
+        for (int i = 0; i<allCheckBoxes().size(); i++){
+            if(allCheckBoxes().get(i).getText().equalsIgnoreCase(checkBoxName)){
+                scrollIntoView(allCheckBoxes().get(i));
+                allCheckBoxes().get(i).click();
+                break;
+            }
+        }
     }
 
 }

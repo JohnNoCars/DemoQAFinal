@@ -44,7 +44,6 @@ public class BaseTest {
 
     @BeforeClass
     public void setUpConfig() throws IOException, AWTException {
-        WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         robot = new Robot();
         excelReader = new ExcelReader("DemoQAProject.xlsx");
