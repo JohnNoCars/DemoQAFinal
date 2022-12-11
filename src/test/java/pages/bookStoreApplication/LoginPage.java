@@ -12,10 +12,10 @@ public class LoginPage {
     }
 
     public WebElement getUserName(){
-        return webDriver.findElement(By.xpath("//*[@id=\"userName\"]"));
+        return webDriver.findElement(By.id("userName"));
     }
     public WebElement getPassword(){
-        return webDriver.findElement(By.xpath("//*[@id=\"password\"]"));
+        return webDriver.findElement(By.cssSelector("#password"));
     }
     public WebElement getLoginBtn(){
         return webDriver.findElement(By.xpath("//*[@id=\"login\"]"));
@@ -23,6 +23,7 @@ public class LoginPage {
     public WebElement getNewUserBtn(){
         return webDriver.findElement(By.xpath("//*[@id=\"newUser\"]"));
     }
+    public WebElement getInvalidUsernameOrPasswordNotification(){return webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div/p")); }
 
     //-----------------------------------------------------------------------
     public void fillUsername(String s){
@@ -36,6 +37,9 @@ public class LoginPage {
     }
     public void clickNewUserBtn(){
         getNewUserBtn().click();
+    }
+    public String getErrorMessage(){
+        return getInvalidUsernameOrPasswordNotification().getText();
     }
 
 }

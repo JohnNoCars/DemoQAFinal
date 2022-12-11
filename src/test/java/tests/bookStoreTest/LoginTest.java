@@ -22,6 +22,27 @@ public class LoginTest extends BaseTest {
         profilePage.clickRegister();
     }
     @Test
+    public void userCannotLoginWithInvalidCredentials() throws InterruptedException {
+        scrollIntoView(sidebarPage.login());
+        sidebarPage.clickLogin();
+        for(int i = 1; i<=excelReader.getLastRow("BookStoreInvalidLogin"); i++) {
+            String username = excelReader.getStringData("BookStoreInvalidLogin", i, 0);
+            String password = excelReader.getStringData("BookStoreInvalidLogin", i, 1);
+            loginPage.getUserName().clear();
+            loginPage.fillUsername(username);
+            loginPage.getPassword().clear();
+            loginPage.fillPassword(password);
+            loginPage.clickLoginBtn();
+            Thread.sleep(1000);
+            visibilityWait(loginPage.getInvalidUsernameOrPasswordNotification());
+            Assert.assertEquals(loginPage.getErrorMessage(), excelReader.getStringData("BookStoreInvalidLogin",1,2));
+            Assert.assertTrue(loginPage.getLoginBtn().isDisplayed());
+            Assert.assertTrue(loginPage.getNewUserBtn().isDisplayed());
+
+        }
+    }
+
+    @Test
     public void userCanLogIn() throws InterruptedException {
         scrollIntoView(sidebarPage.login());
         sidebarPage.clickLogin();
