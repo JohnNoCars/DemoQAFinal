@@ -41,6 +41,45 @@ public class LoginTest extends BaseTest {
 
         }
     }
+    @Test
+    public void userCannotLoginWithBlankUsername(){
+        scrollIntoView(sidebarPage.login());
+        sidebarPage.clickLogin();
+        loginPage.getUserName().clear();
+        loginPage.getPassword().clear();
+        loginPage.fillPassword(excelReader.getStringData("BookStoreLogin",1,1));
+        loginPage.clickLoginBtn();
+        Assert.assertTrue(loginPage.getBlankCredentialError().isDisplayed());
+        Assert.assertTrue(loginPage.getLoginBtn().isDisplayed());
+        Assert.assertTrue(loginPage.getNewUserBtn().isDisplayed());
+
+    }
+
+    @Test
+    public void userCannotLoginWithBlankPassword(){
+        scrollIntoView(sidebarPage.login());
+        sidebarPage.clickLogin();
+        loginPage.getUserName().clear();
+        loginPage.fillUsername(excelReader.getStringData("BookStoreLogin",1,0));
+        loginPage.getPassword().clear();
+        loginPage.clickLoginBtn();
+        Assert.assertTrue(loginPage.getBlankCredentialError().isDisplayed());
+        Assert.assertTrue(loginPage.getLoginBtn().isDisplayed());
+        Assert.assertTrue(loginPage.getNewUserBtn().isDisplayed());
+
+    }
+    @Test
+    public void userCannotLoginWithBlankCredentials(){
+        scrollIntoView(sidebarPage.login());
+        sidebarPage.clickLogin();
+        loginPage.getUserName().clear();
+        loginPage.getPassword().clear();
+        loginPage.clickLoginBtn();
+        Assert.assertTrue(loginPage.getBlankCredentialError().isDisplayed());
+        Assert.assertTrue(loginPage.getLoginBtn().isDisplayed());
+        Assert.assertTrue(loginPage.getNewUserBtn().isDisplayed());
+
+    }
 
     @Test
     public void userCanLogIn() throws InterruptedException {

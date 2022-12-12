@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class LoginPage {
     public WebDriver webDriver;
 
@@ -24,7 +26,10 @@ public class LoginPage {
         return webDriver.findElement(By.xpath("//*[@id=\"newUser\"]"));
     }
     public WebElement getInvalidUsernameOrPasswordNotification(){return webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div/p")); }
-
+    public String getErrorMessage(){
+        return getInvalidUsernameOrPasswordNotification().getText();
+    }
+    public WebElement getBlankCredentialError(){return webDriver.findElement(By.cssSelector(".mr-sm-2.is-invalid.form-control"));}
     //-----------------------------------------------------------------------
     public void fillUsername(String s){
         getUserName().sendKeys(s);
@@ -38,8 +43,7 @@ public class LoginPage {
     public void clickNewUserBtn(){
         getNewUserBtn().click();
     }
-    public String getErrorMessage(){
-        return getInvalidUsernameOrPasswordNotification().getText();
-    }
+    public String getUsernamePlaceholder(){return getUserName().getAttribute("placeholder");}
+    public String getPasswordPlaceholder(){return getPassword().getAttribute("placeholder");}
 
 }
